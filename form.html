@@ -1,7 +1,7 @@
 <DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta  name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Document</title>
@@ -9,13 +9,17 @@
      function validate(){
        var firstName=document.getElememtById("firstname").value
        var mobile=document.getElementById("mobile").value
-       var email=document.getElementById("email").value
+       var email=document.getElementById("email").value*/
+       var password=document.grtElementById("password").value
        var firstNamecheck=/^[a-zA-Z]+$/
        var mobileCheck=/^[0-9]{10}$/
        var emailCheck=/^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
-                      //bandaru.mounika @ gmail.com
+                                  //bandaru.mounika @ gmail.com
+
+       var passwordCheck=/^[A-Za-z0-9.#@]\w{4,8}$/
+
         if(firstname==""||firstName.length<3){
-            alert("please enter your first name")
+            alert("please enter  first name")
             return false
         } 
        if(!firstName.match(firstNamecheck)){
@@ -28,9 +32,14 @@
            return false
          }
          if(!email.match(emailCheck)){
-             alert("please enter valid email")
+             alert("check  email")
               return false
           }
+         
+         if(!password.match(passwordcheck)){
+             alert("check password")
+              return false
+         }
         return true
      }
   </script>
@@ -39,7 +48,8 @@
     <form onsubmit="return validate()">
          <p><input type="text"  placeholder="Enter firstname" id="firstname"/></p>
          <p><input placeholder="Enter mobile number" id="mobile"/></p>
-         <p><input email="Enter email" id="email"/></p>
+         <p><input placeholder="Enter email" id="email"/></p>
+         <p><input placeholder="Enter password" id="password"/></p>
          <button>Submit</button>
     </form>
   </body>
